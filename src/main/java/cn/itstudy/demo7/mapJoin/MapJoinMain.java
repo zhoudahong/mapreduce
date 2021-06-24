@@ -27,7 +27,7 @@ public class MapJoinMain extends Configured implements Tool {
         Job job = Job.getInstance(conf);
 
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.addInputPath(job, new Path("file:///E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\map端join\\input"));
+        TextInputFormat.addInputPath(job, new Path("file:///E:\\资料\\map端join\\input"));
 
         job.setMapperClass(MapJoinMapper.class);
         job.setMapOutputKeyClass(Text.class);
@@ -36,7 +36,7 @@ public class MapJoinMain extends Configured implements Tool {
         //要想不走reduce阶段，必须设置为0，不然setNumReduceTasks会用默认的值1，此时就会被分区
         job.setNumReduceTasks(0);
         job.setOutputFormatClass(TextOutputFormat.class);
-        TextOutputFormat.setOutputPath(job, new Path("file:///E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\map端join\\map_join_output"));
+        TextOutputFormat.setOutputPath(job, new Path("file:///E:\\资料\\map端join\\map_join_output"));
         boolean b = job.waitForCompletion(true);
         return b ? 0 : 1;
     }

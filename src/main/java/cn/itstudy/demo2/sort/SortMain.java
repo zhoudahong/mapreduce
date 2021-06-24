@@ -22,7 +22,7 @@ public class SortMain extends Configured implements Tool {
         job.setJarByClass(SortMain.class);
 
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.addInputPath(job, new Path("E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\排序\\input"));
+        TextInputFormat.addInputPath(job, new Path("E:\\资料\\排序\\input"));
 
 
         job.setMapperClass(SortMapper.class);
@@ -38,7 +38,7 @@ public class SortMain extends Configured implements Tool {
         job.setOutputValueClass(Text.class);
 
         job.setOutputFormatClass(TextOutputFormat.class);
-        TextOutputFormat.setOutputPath(job, new Path("E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\排序\\outSort2"));
+        TextOutputFormat.setOutputPath(job, new Path("E:\\资料\\排序\\outSort2"));
 
         //true表示将运行进度等信息及时输出给用户，false的话只是等待作业结束
         boolean b = job.waitForCompletion(true);

@@ -16,7 +16,7 @@ public class FlowSortMain extends Configured implements Tool {
         Job job = Job.getInstance(super.getConf(), "flowSort");
 
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.addInputPath(job, new Path("file:///E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\流量统计\\outSort1"));
+        TextInputFormat.addInputPath(job, new Path("file:///E:\\资料\\流量统计\\outSort1"));
 
         job.setMapperClass(FlowSortMapper.class);
         job.setMapOutputKeyClass(FlowBeanSort.class);
@@ -29,7 +29,7 @@ public class FlowSortMain extends Configured implements Tool {
         job.setOutputValueClass(Text.class);
 
         job.setOutputFormatClass(TextOutputFormat.class);
-        TextOutputFormat.setOutputPath(job, new Path("file:///E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\流量统计\\outSort2"));
+        TextOutputFormat.setOutputPath(job, new Path("file:///E:\\资料\\流量统计\\outSort2"));
 
         boolean b = job.waitForCompletion(true);
 

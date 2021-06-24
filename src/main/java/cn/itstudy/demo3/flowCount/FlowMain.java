@@ -21,7 +21,7 @@ public class FlowMain extends Configured implements Tool {
 
         //1,读取文件解析成key，value对
         job.setInputFormatClass(TextInputFormat.class);
-        TextInputFormat.addInputPath(job, new Path("E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\流量统计\\input\\"));
+        TextInputFormat.addInputPath(job, new Path("E:\\资料\\流量统计\\input\\"));
 
         //2,自定义map逻辑
         job.setMapperClass(FlowMapper.class);
@@ -37,7 +37,7 @@ public class FlowMain extends Configured implements Tool {
 
         //8，输出
         job.setOutputFormatClass(TextOutputFormat.class);
-        TextOutputFormat.setOutputPath(job, new Path("E:\\黑马程序员\\05_大数据\\深圳大数据6期hadoop\\4、第四天\\资料\\流量统计\\outSort1\\"));
+        TextOutputFormat.setOutputPath(job, new Path("E:\\资料\\流量统计\\outSort1\\"));
 
         boolean b = job.waitForCompletion(true);
         return b ? 0 : 1;
